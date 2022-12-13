@@ -19,7 +19,7 @@ while [ "$choice" -ne 3 ]; do
         mapfile -t r < <(shuf -i 0-9 -n 10)
         echo "${r[@]}";
         for i in {1..10}; do
-          a[$i]="$i"
+          a[i]="$i"
         done
         echo "${a[@]}"
         read -r -t 5 -p "Enter the index of your number : " x
@@ -31,7 +31,7 @@ while [ "$choice" -ne 3 ]; do
 
         if [ "${r[$x-1]}" -eq "$n" ];then
           echo "Great"
-          ((points=points+1))
+          points=$((points+1))
         else
           cancel=1
           break
