@@ -13,6 +13,7 @@ while [ "$choice" -ne 3 ]; do
   if [ "$choice" -eq 1 ];then
     x=0
     cancel=0
+    declare -i points
     points=0
     read -r -p "Enter any number between 0 and 9 : " n
       while [ "$cancel" -eq 0 ]; do
@@ -31,7 +32,7 @@ while [ "$choice" -ne 3 ]; do
 
         if [ "${r[$x-1]}" -eq "$n" ];then
           echo "Great"
-          points=$((points+1))
+          points=points+1
         else
           cancel=1
           break
